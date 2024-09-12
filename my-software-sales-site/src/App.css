@@ -1,0 +1,250 @@
+/* Aseguramos que todo el contenido se vea bien en diferentes tamaños */
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  background-color: #121212;
+  color: white;
+  font-family: 'Arial', sans-serif;
+}
+
+/* El contenedor de la aplicación */
+.App {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* Añadimos un contenedor para centrar el contenido */
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+/* Header */
+header {
+  background-color: #1e1e1e;
+  padding: 1rem 2rem;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.light-mode header {
+  background-color: #f1f1f1;
+  color: #121212;
+}
+
+nav a {
+  color: #00bcd4;
+  margin-left: 1rem;
+  text-decoration: none;
+}
+
+nav a:hover {
+  color: white;
+}
+
+/* Botones generales */
+button {
+  background-color: #00bcd4;
+  border: none;
+  color: white;
+  padding: 0.75rem 1.5rem;
+  margin-top: 2rem;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+button:hover {
+  background-color: #0097a7;
+  transform: scale(1.05); /* Crecimiento suave al pasar el ratón */
+}
+
+/* Light mode */
+.light-mode {
+  background-color: #ffffff;
+  color: #121212;
+}
+
+.light-mode footer {
+  background-color: #f1f1f1;
+  color: #121212;
+}
+
+/* Footer */
+footer {
+  background-color: #1e1e1e;
+  padding: 2rem;
+  text-align: center;
+  color: white;
+  width: 100%;
+  margin-top: auto;
+}
+
+/* Botón de modo claro/oscuro */
+.toggle-button {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  background-color: #00bcd4;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+}
+
+.toggle-button:hover {
+  background-color: #0097a7;
+}
+
+/* Transiciones */
+* {
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+h2 {
+  color: #00bcd4;
+  transition: color 0.3s ease;
+}
+
+main, section {
+  opacity: 0;
+  animation: fadeIn 1s forwards;
+}
+
+/* Animaciones */
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+.scroll-animate {
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.scroll-visible {
+  opacity: 1;
+  animation: fadeIn 0.6s ease-out forwards;
+}
+
+/* Estilos del formulario */
+.quote-form {
+  background-color: #1e1e1e;
+  padding: 2rem;
+  border-radius: 10px;
+  margin-top: 2rem;
+  text-align: center;
+}
+
+.quote-form h3 {
+  color: #00bcd4;
+  margin-bottom: 1rem;
+}
+
+.quote-form label {
+  display: block;
+  margin-bottom: 1rem;
+}
+
+.quote-form input, .quote-form select {
+  width: 100%;
+  padding: 0.5rem;
+  margin-top: 0.5rem;
+  border: none;
+  border-radius: 5px;
+  background-color: #333;
+  color: white;
+}
+
+.quote-form button {
+  background-color: #00bcd4;
+  color: white;
+  border: none;
+  padding: 0.75rem;
+  margin-top: 1rem;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.quote-form button:hover {
+  background-color: #0097a7;
+}
+
+/* Estilo de las cartas de productos */
+.product-card {
+  background-color: #1e1e1e;
+  padding: 1.5rem;
+  border-radius: 10px;
+  margin: 1.5rem 0;
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.product-card img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+.product-card:hover {
+  transform: translateY(-10px); /* Hace que suba suavemente al pasar el mouse */
+}
+/* Elimina el desplazamiento horizontal */
+html, body {
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+/* Asegúrate de que los elementos no excedan el ancho de la pantalla */
+* {
+  box-sizing: border-box;
+}
+
+/* Hero Section */
+/* Ajuste para el texto en el hero section */
+/* Para que la imagen de fondo cubra todo el área */
+.hero-container {
+  position: relative;
+  height: 100vh; /* Toda la pantalla */
+  background-image: url('../public/assets/images/AEL_LOGO.jpeg');
+  background-size: cover; /* Hace que la imagen cubra toda la sección */
+  background-position: center;
+  display: flex;
+  align-items: center; /* Centrar verticalmente */
+  justify-content: flex-start; /* Alinear a la izquierda */
+}
+
+.hero-text {
+  position: relative;
+  z-index: 1; /* Asegura que el texto esté por encima de la imagen */
+  max-width: 600px; /* Limitar el ancho del texto */
+  margin-left: 50px; /* Asegura que esté alineado a la izquierda */
+  background-color: rgba(0, 0, 0, 0.6); /* Fondo oscuro semitransparente para mayor legibilidad */
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.cta-button {
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: #00bcd4;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.cta-button:hover {
+  background-color: #0097a7;
+}
