@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import Header from './components/Header';
 import './App.css';
 
+
 function App() {
   const [darkMode, setDarkMode] = useState(true);
   const [showForm, setShowForm] = useState(false);
@@ -15,35 +16,54 @@ function App() {
   };
 
   useEffect(() => {
-    const handleScroll = () => {
-      const elements = document.querySelectorAll('.scroll-animate');
-      elements.forEach(el => {
-        const position = el.getBoundingClientRect().top;
-        if (position < window.innerHeight * 0.75) {
-          el.classList.add('scroll-visible');
-        }
-      });
-    };
+    const container = document.querySelector('.hero-container');
 
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    function randomPosition() {
+      return {
+        x: Math.random() * container.clientWidth,
+        y: Math.random() * container.clientHeight,
+      };
+    }
+
+    function moveLight(light) {
+      const newPosition = randomPosition();
+      light.style.transform = `translate(${newPosition.x}px, ${newPosition.y}px)`;
+    }
+
+    // Crear 10 luces y asignar movimiento aleatorio
+    for (let i = 0; i < 10; i++) {
+      const light = document.createElement('div');
+      light.classList.add('random-light');
+
+      const position = randomPosition();
+      light.style.left = `${position.x}px`;
+      light.style.top = `${position.y}px`;
+
+      container.appendChild(light);
+
+      setInterval(() => {
+        moveLight(light);
+      }, 3000 + Math.random() * 2000); // Movimiento aleatorio cada 3 a 5 segundos
+    }
   }, []);
 
   return (
     <div className={`App ${darkMode ? 'dark-mode' : 'light-mode'}`}>
       <Header darkMode={darkMode} toggleDarkMode={toggleDarkMode} />
       <main>
-      <section id="hero" className="scroll-animate">
-        <div className="hero-container">
-          <div className="hero-text">
-            <h1>Grupo Tecnológico AEL</h1>
-            <h2>Explora Nuestras Soluciones de Software</h2>
-            <p>Ofrecemos soluciones personalizadas para empresas de todos los tamaños.</p>
-            <button onClick={toggleForm} className="cta-button">Obtener una Cotización</button>
+        <section id="hero" className="scroll-animate">
+          <div className="hero-container">
+            <div className="hero-text">
+              <h1>Grupo Tecnológico AEL</h1>
+              <h2>Explora Nuestras Soluciones de Software</h2>
+              <p>Ofrecemos soluciones personalizadas para empresas de todos los tamaños.</p>
+              <button onClick={toggleForm} className="cta-button">Obtener una Cotización</button>
+            </div>
+            <img className="hero-image" src="/assets/images/AEL_LOGO.jpeg" alt="Grupo Tecnológico AEL" />
+
           </div>
-          
-        </div>
-      </section>
+        </section>
+
         {showForm && (
           <section id="quote-form" className="scroll-animate">
             <div className="container">
