@@ -1,0 +1,35 @@
+/* src/pages/AboutUs.css */
+
+/* Estilos para la página Sobre Nosotros */
+.about-us {
+    background-color: #000;
+    color: #fff;
+    padding: 80px 20px;
+    text-align: center;
+  }
+  
+  .about-us h2 {
+    font-size: 2.5em;
+    color: #0ff; /* Azul intenso */
+    margin-bottom: 40px;
+  }
+  
+  .about-us p {
+    font-size: 1.2em;
+    max-width: 800px;
+    margin: 0 auto;
+    line-height: 1.6;
+  }
+  
+  /* Animación al hacer scroll */
+  .about-us {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 1s ease-out, transform 1s ease-out;
+  }
+  
+  .about-us.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
