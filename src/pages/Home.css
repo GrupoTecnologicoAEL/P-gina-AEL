@@ -1,0 +1,155 @@
+/* src/pages/Home.css */
+
+/* Estilos para la página de inicio */
+.home {
+    position: relative;
+    color: #fff;
+    text-align: center;
+    padding-top: 100px; /* Ajusta según la altura del header */
+    overflow: hidden;
+  }
+  
+  .home-content {
+    position: relative;
+    z-index: 1; /* Para que esté sobre la animación de fondo */
+    padding: 0 20px;
+  }
+  
+  .home-content .logo-container {
+    margin-bottom: 20px;
+  }
+  
+  .home-content .logo-text {
+    font-size: 8em; /* Tamaño grande para el logo */
+    font-weight: bold;
+    color: #0ff; /* Azul intenso */
+    text-shadow: 0 0 10px #0ff, 0 0 20px #0ff, 0 0 30px #0ff;
+  }
+  
+  .home-content h1 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+  }
+  
+  .home-content p {
+    font-size: 1.5em;
+  }
+  
+  .background-animation {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+  }
+  
+  /* Responsividad */
+  @media (max-width: 768px) {
+    .home-content .logo-text {
+      font-size: 5em;
+    }
+  
+    .home-content h1 {
+      font-size: 2em;
+    }
+  
+    .home-content p {
+      font-size: 1.2em;
+    }
+  }
+  
+  /* src/pages/Home.css */
+
+/* ...Estilos anteriores... */
+
+/* Sección Por Qué Elegirnos */
+.why-choose-us {
+  padding: 60px 20px;
+  background-color: #111;
+  color: #fff;
+  text-align: center;
+}
+
+.why-choose-us h2 {
+  color: #0ff;
+  margin-bottom: 30px;
+}
+
+.why-choose-us ul {
+  list-style: none;
+  padding: 0;
+}
+
+.why-choose-us li {
+  font-size: 1.2em;
+  margin: 15px 0;
+}
+
+/* Sección Nuestro Proceso */
+.our-process {
+  padding: 60px 20px;
+  background-color: #000;
+  color: #fff;
+  text-align: center;
+}
+
+.our-process h2 {
+  color: #0ff;
+  margin-bottom: 30px;
+}
+
+.our-process ol {
+  list-style: decimal;
+  margin: 0 auto;
+  max-width: 600px;
+  text-align: left;
+}
+
+.our-process li {
+  font-size: 1.2em;
+  margin: 15px 0;
+}
+
+/* Sección Testimonios */
+.testimonials {
+  padding: 60px 20px;
+  background-color: #111;
+  color: #fff;
+  text-align: center;
+}
+
+.testimonials h2 {
+  color: #0ff;
+  margin-bottom: 30px;
+}
+
+.testimonial {
+  max-width: 800px;
+  margin: 0 auto;
+  font-style: italic;
+}
+
+.testimonial p {
+  margin: 15px 0;
+}
+
+/* Ajustes para móviles */
+@media (max-width: 768px) {
+  /* Ajusta los tamaños de fuente y márgenes según sea necesario */
+}
+
+.spline-container {
+  width: 100%;
+  height: 100vh; /* Ocupa el 100% de la altura de la ventana */
+  position: relative;
+}
+
+/* Asegurarte de que el canvas de Spline ocupa todo el espacio */
+.spline-container canvas {
+  width: 100% !important;
+  height: 100% !important;
+  position: absolute;
+  top: 0;
+  left: 0;
+}

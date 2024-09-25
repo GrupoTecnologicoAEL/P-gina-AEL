@@ -1,0 +1,36 @@
+/* src/components/ClientLogos.css */
+
+/* Estilos para la banda de logos de clientes */
+.client-logos {
+    overflow: hidden;
+    background-color: #111; /* Puedes ajustar el color de fondo */
+    padding: 20px 0;
+  }
+  
+  .logos-marquee {
+    display: flex;
+    animation: scroll 20s linear infinite;
+  }
+  
+  .logos-marquee img {
+    margin: 0 30px;
+    max-height: 100px;
+    filter: brightness(0) invert(1); /* Convierte el logo a blanco */
+  }
+  
+  @keyframes scroll {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+  
+  /* Para duplicar los logos y crear un efecto continuo */
+  .logos-marquee::after {
+    content: '';
+    display: block;
+    width: 100%;
+  }
+  
