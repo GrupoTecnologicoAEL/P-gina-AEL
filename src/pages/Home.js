@@ -1,6 +1,7 @@
 // src/pages/Home.js
 import React from 'react';
 import ClientLogos from '../components/ClientLogos';
+import WhyChooseUs from '../components/WhyChooseUs';
 import { Helmet } from 'react-helmet';
 import './Home.css';
 import Spline from '@splinetool/react-spline';
@@ -26,14 +27,7 @@ function Home() {
       </div>
 
       {/* Por Qué Elegirnos */}
-      <section id="why-choose-us" className="why-choose-us">
-        <h2>¿Por Qué Elegirnos?</h2>
-        <ul>
-          <li>Equipo profesional y dedicado</li>
-          <li>Soluciones innovadoras</li>
-          <li>Atención personalizada</li>
-        </ul>
-      </section>
+      <WhyChooseUs />
 
       {/* Nuestro Proceso */}
       <section id="our-process" className="our-process">

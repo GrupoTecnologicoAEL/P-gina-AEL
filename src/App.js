@@ -12,6 +12,7 @@ import 'aos/dist/aos.css';
 import { useEffect } from 'react';
 import './App.css';
 import { SpeedInsights } from "@vercel/speed-insights/react"
+import { Analytics } from "@vercel/analytics/react"
 
 // Importa las demás páginas según las vayas creando
 
@@ -32,6 +33,7 @@ function App() {
       </Routes>
       <Footer />
       <SpeedInsights/>
+      <Analytics/>
     </div>
   );
 }
